@@ -1,0 +1,38 @@
+{
+	"permissions": {
+		"allow": [
+			"Bash(npm run test *)",
+			"Bash(npm run lint *)",
+			"Bash(npm run build *)",
+			"Bash(npm run dev *)",
+			"Bash(git status)",
+			"Bash(git diff *)",
+			"Bash(git log *)"
+		],
+		"ask": ["Bash(npm install *)", "Bash(git *)"],
+		"deny": [
+			"Bash(git add .)",
+			"Bash(git add -A)",
+			"Bash(git push *)",
+			"Bash(git push -f *)",
+			"Bash(git reset *)",
+			"Bash(npm publish *)",
+			"Bash(rm -rf *)",
+			"Bash(curl *)",
+			"Bash(wget *)",
+			"Bash(*deploy*)",
+			"Bash(terraform *)",
+			"Read(./.env)",
+			"Read(./.env.*)",
+			"Edit(./.env)",
+			"Edit(./.env.*)",
+			"Read(./secrets/**)",
+			"Edit(./secrets/**)"
+		]
+	},
+	"sandbox": {
+		"enabled": true,
+		"autoAllowBashIfSandboxed": true,
+		"excludedCommands": ["git"]
+	}
+}
